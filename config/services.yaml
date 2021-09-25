@@ -144,3 +144,7 @@ services:
     Psr\Http\Message\ServerRequestInterface:
         factory: ['@Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory', 'createRequest']
         arguments: ['@=service("request_stack").getMasterRequest()']
+
+    App\Model\Product\LastVisitedProductEventListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.response }
