@@ -43,6 +43,13 @@ class Product extends BaseProduct
     }
 
     /**
+     * @var int
+     *
+     * @ORM\Column(type="integer")
+     */
+    protected $extId;
+
+    /**
      * @param \Shopsys\FrameworkBundle\Model\Product\ProductCategoryDomain[] $productCategoryDomains
      * @param \App\Model\Product\ProductData $productData
      */
@@ -59,5 +66,15 @@ class Product extends BaseProduct
     protected function setData(BaseProductData $productData): void
     {
         parent::setData($productData);
+
+        $this->extId = $productData->extId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getExtId(): int
+    {
+        return $this->extId;
     }
 }

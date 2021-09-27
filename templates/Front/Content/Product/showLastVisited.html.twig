@@ -1,0 +1,10 @@
+{% if productViews %}
+    <div class="web__line">
+        <div class="web__container">
+            <h2>Last visited products</h2>
+            {% for productView in productViews %}
+                <p>{{ productView.name }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
